@@ -45,8 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Memorama\Memorama.cs" />
-     <Compile Include="Assets\Memorama\MemoramaCard.cs" />
+     <Compile Include="Assets\DirtSpotBehaviour.cs" />
+     <Compile Include="Assets\Minigames\Memorama\Memorama.cs" />
+     <Compile Include="Assets\Minigames\Memorama\MemoramaCard.cs" />
      <Compile Include="Assets\StyloGestures\Example\Scripts\DegreeSwipeDetectionExample.cs" />
      <Compile Include="Assets\StyloGestures\Example\Scripts\DoubleTapDetectionExample.cs" />
      <Compile Include="Assets\StyloGestures\Example\Scripts\DragDetectionExample.cs" />
@@ -69,6 +70,8 @@
      <Compile Include="Assets\StyloGestures\Scripts\Tap\DoubleTapGestureEvent.cs" />
      <Compile Include="Assets\StyloGestures\Scripts\Tap\TapGesture.cs" />
      <Compile Include="Assets\StyloGestures\Scripts\Tap\TapGestureEvent.cs" />
+     <Compile Include="Assets\TeethBrushBehaviour.cs" />
+     <Compile Include="Assets\TeethBrusher.cs" />
      <None Include="Assets\StyloGestures\README.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
