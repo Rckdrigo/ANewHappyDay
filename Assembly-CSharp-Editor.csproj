@@ -46,7 +46,27 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\StyloGestures\Editor\ScriptableAssetGenerator.cs" />
+     <None Include="Assets\Minigames\Despertador\Shaders\DepthOrder.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\SecondShader.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\PhongLighting.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\GrayScale.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\LevelShader.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\ShowNormal.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\NormalMap.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\FinalRainShader.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\VertexAnimation.shader" />
      <None Include="Assets\StyloGestures\README.txt" />
+     <None Include="Assets\Minigames\Despertador\Shaders\NightVision.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\MyShader.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\TextureAnimationShader.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\ShowColors.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\CustomPhongLighting.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\MaskingSpecular.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\CustomShader.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\EdgeDetection.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\CustomLighting.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\Alpha.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\RampTextureLighting.shader" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>

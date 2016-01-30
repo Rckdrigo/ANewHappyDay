@@ -45,9 +45,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DirtSpotBehaviour.cs" />
+     <Compile Include="Assets\Minigames\Despertador\Script\BlinkScript.cs" />
+     <Compile Include="Assets\Minigames\Despertador\Script\Randomizer.cs" />
+     <Compile Include="Assets\Minigames\Despertador\Script\TapDetect.cs" />
+     <Compile Include="Assets\Minigames\Despertador\Script\TapMe.cs" />
      <Compile Include="Assets\Minigames\Memorama\Memorama.cs" />
      <Compile Include="Assets\Minigames\Memorama\MemoramaCard.cs" />
+     <Compile Include="Assets\Minigames\PrepararCafe\Scripts\Randomize.cs" />
+     <Compile Include="Assets\Minigames\PrepararCafe\Scripts\Touched.cs" />
+     <Compile Include="Assets\Minigames\Slippers\FootBehaviour.cs" />
+     <Compile Include="Assets\Minigames\Slippers\Slippers.cs" />
+     <Compile Include="Assets\Minigames\TeethBrusher\DirtSpotBehaviour.cs" />
+     <Compile Include="Assets\Minigames\TeethBrusher\TeethBrushBehaviour.cs" />
+     <Compile Include="Assets\Minigames\TeethBrusher\TeethBrusher.cs" />
+     <Compile Include="Assets\Minigames\Water\Scripts\CollisionDetector.cs" />
+     <Compile Include="Assets\Minigames\Water\Scripts\SplashStream.cs" />
+     <Compile Include="Assets\Minigames\Water\Scripts\WaterTap.cs" />
+     <Compile Include="Assets\Scripts\CheckDate.cs" />
+     <Compile Include="Assets\Scripts\MinigameSelect.cs" />
      <Compile Include="Assets\StyloGestures\Example\Scripts\DegreeSwipeDetectionExample.cs" />
      <Compile Include="Assets\StyloGestures\Example\Scripts\DoubleTapDetectionExample.cs" />
      <Compile Include="Assets\StyloGestures\Example\Scripts\DragDetectionExample.cs" />
@@ -70,9 +85,27 @@
      <Compile Include="Assets\StyloGestures\Scripts\Tap\DoubleTapGestureEvent.cs" />
      <Compile Include="Assets\StyloGestures\Scripts\Tap\TapGesture.cs" />
      <Compile Include="Assets\StyloGestures\Scripts\Tap\TapGestureEvent.cs" />
-     <Compile Include="Assets\TeethBrushBehaviour.cs" />
-     <Compile Include="Assets\TeethBrusher.cs" />
+     <None Include="Assets\Minigames\Despertador\Shaders\DepthOrder.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\SecondShader.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\PhongLighting.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\GrayScale.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\LevelShader.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\ShowNormal.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\NormalMap.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\FinalRainShader.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\VertexAnimation.shader" />
      <None Include="Assets\StyloGestures\README.txt" />
+     <None Include="Assets\Minigames\Despertador\Shaders\NightVision.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\MyShader.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\TextureAnimationShader.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\ShowColors.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\CustomPhongLighting.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\MaskingSpecular.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\CustomShader.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\EdgeDetection.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\CustomLighting.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\Alpha.shader" />
+     <None Include="Assets\Minigames\Despertador\Shaders\RampTextureLighting.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
