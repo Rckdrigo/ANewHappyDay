@@ -1,5 +1,11 @@
-Base path: D:/Unity/Editor/Data
+Base path: C:/Program Files/Unity/Editor/Data
 Cmd: getPlatforms
+<<<<<<< HEAD
+Cmd: compileSnippet
+  api=4 type=0 insize=927 outsize=2013 kw=DIRECTIONAL SHADOWS_OFF pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_TEXTURE_ALPHASPLIT_ALLOWED ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=927 outsize=2741 kw=DIRECTIONAL SHADOWS_OFF pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_TEXTURE_ALPHASPLIT_ALLOWED ok=1
+=======
 Cmd: preprocess
   insize=738 outsize=178 ok=1
 Cmd: compileSnippet
@@ -334,6 +340,7 @@ Cmd: preprocess
   insize=1610 outsize=265 ok=1
 Cmd: preprocess
   insize=940 outsize=179 ok=1
+<<<<<<< HEAD
 Cmd: preprocess
   insize=738 outsize=178 ok=1
 Cmd: compileSnippet
@@ -668,3 +675,6 @@ Cmd: preprocess
   insize=1610 outsize=265 ok=1
 Cmd: preprocess
   insize=940 outsize=179 ok=1
+=======
+>>>>>>> 117798dac153a5ea427641ef9e8334093a51f532
+>>>>>>> 0634a3f48d4a5cfe8814cec47e3fdef7834a44be
