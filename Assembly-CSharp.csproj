@@ -58,6 +58,9 @@
      <Compile Include="Assets\Minigames\TeethBrusher\DirtSpotBehaviour.cs" />
      <Compile Include="Assets\Minigames\TeethBrusher\TeethBrushBehaviour.cs" />
      <Compile Include="Assets\Minigames\TeethBrusher\TeethBrusher.cs" />
+     <Compile Include="Assets\Minigames\Water\Scripts\CollisionDetector.cs" />
+     <Compile Include="Assets\Minigames\Water\Scripts\SplashStream.cs" />
+     <Compile Include="Assets\Minigames\Water\Scripts\WaterTap.cs" />
      <Compile Include="Assets\Scripts\CheckDate.cs" />
      <Compile Include="Assets\Scripts\MinigameSelect.cs" />
      <Compile Include="Assets\StyloGestures\Example\Scripts\DegreeSwipeDetectionExample.cs" />
