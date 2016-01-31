@@ -5,9 +5,9 @@ public class BlinkScript : MonoBehaviour
 {
     private Vector3 startPosition;
     private Vector3 endPosition;
-    [Range(-1,1)]
+    [Range(-1, 1)]
     public int direction;
-    [Range(1f,3f)]
+    [Range(1f, 3f)]
     public float blinkSpeed;
     private bool awake;
     private bool dead;
@@ -21,8 +21,8 @@ public class BlinkScript : MonoBehaviour
         dead = false;
     }
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
 
     }
@@ -60,11 +60,19 @@ public class BlinkScript : MonoBehaviour
 
     void OpenLid()
     {
-        transform.position = Vector3.Lerp(transform.position, endPosition, Time.fixedDeltaTime);
+        transform.position = Vector3.Lerp(transform.position, endPosition, Time.fixedDeltaTime * 2);
+        if (Vector2.Distance(transform.position, endPosition) <= 0.01f)
+        {
+            TapMe.FinishedAnimation();
+        }
     }
 
     void CloseLid()
     {
-        transform.position = Vector3.Lerp(transform.position, startPosition, Time.fixedDeltaTime);
+        transform.position = Vector3.Lerp(transform.position, startPosition, Time.fixedDeltaTime * 2);
+        if (Vector2.Distance(transform.position, startPosition) <= 0.01f)
+        {
+            TapMe.FinishedAnimation();
+        }
     }
 }
