@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class WaterTap : MonoBehaviour
@@ -18,8 +19,23 @@ public class WaterTap : MonoBehaviour
         spawnPosition.z += 1;
     }
 
+    void Start()
+    {
+        Timer.TimeOut += OnTimeOut;
+    }
+
+    void OnDestroy()
+    {
+        Timer.TimeOut -= OnTimeOut;
+    }
+
+    void OnTimeOut()
+    {
+        Die();
+    }
+
     // Update is called once per frame
-	void Update ()
+    void Update()
     {
         ScaleStream();
     }
@@ -71,11 +87,13 @@ public class WaterTap : MonoBehaviour
     {
         Time.timeScale = 0.5f;
         finish = true;
+        SceneManager.LoadScene("Map");
     }
 
     void Die()
     {
         Debug.Log("TODO");
         Time.timeScale = 0;
+        SceneManager.LoadScene("Map");
     }
 }
