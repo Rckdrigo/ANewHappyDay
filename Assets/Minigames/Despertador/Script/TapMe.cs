@@ -83,6 +83,6 @@ public class TapMe : MonoBehaviour
 
     public static void FinishedAnimation()
     {
-        SceneManager.LoadScene("Map");   
+        SceneManager.LoadScene(2);   
     }
 }

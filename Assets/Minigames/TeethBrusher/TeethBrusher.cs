@@ -15,7 +15,7 @@ public class TeethBrusher : MonoBehaviour
         {
             //TODO
             print("LOST");
-            SceneManager.LoadScene("Map");
+            SceneManager.LoadScene(2);
         };
     }
 
@@ -25,7 +25,7 @@ public class TeethBrusher : MonoBehaviour
         if (teeth.Count == 0)
         {
             //TODO
-            SceneManager.LoadScene("Map");
+            SceneManager.LoadScene(2);
         }
     }
 }
