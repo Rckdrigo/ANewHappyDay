@@ -5,42 +5,42 @@ using System;
 namespace StyloGestures
 {
 
-	[HelpURL("https://github.com/Rckdrigo/Stylo-Gestures/wiki/Drag-Gesture")]
-	public abstract class DragGesture : Gesture
-	{
+    [HelpURL("https://github.com/Rckdrigo/Stylo-Gestures/wiki/Drag-Gesture")]
+    public abstract class DragGesture : Gesture
+    {
 
-		#region Core
+        #region Core
 
-		public delegate void OnGestureEvent(Vector2 actualPosition,Vector2 actualDirection);
+        public delegate void OnGestureEvent(Vector2 actualPosition,Vector2 actualDirection);
 
-		public static event OnGestureEvent OnDragEvent;
+        public static event OnGestureEvent OnDragEvent;
 
-		private bool dragging;
-		private Vector2 lastPosition, actualPosition;
+        private bool dragging;
+        private Vector2 lastPosition, actualPosition;
 
-		public virtual void FixedUpdate()
-		{
-			#if UNITY_EDITOR
-			if (Input.GetMouseButton(0))
-			{
-				dragging = true;
-				actualPosition = Input.mousePosition;
-				onGesture = true;
-				OnDragDetected(actualPosition, (actualPosition - lastPosition).normalized);
-				try
-				{
-					OnDragEvent(actualPosition, (actualPosition - lastPosition).normalized);
-				}
-				catch (NullReferenceException)
-				{
-				}
-			}
-			else if (!Input.GetMouseButton(0))
-			{
-				onGesture = false;
-				dragging = false;
-			}
-			#else
+        public virtual void FixedUpdate()
+        {
+            #if UNITY_EDITOR || UNITY_STANDALONE
+            if (Input.GetMouseButton(0))
+            {
+                dragging = true;
+                actualPosition = Input.mousePosition;
+                onGesture = true;
+                OnDragDetected(actualPosition, (actualPosition - lastPosition).normalized);
+                try
+                {
+                    OnDragEvent(actualPosition, (actualPosition - lastPosition).normalized);
+                }
+                catch (NullReferenceException)
+                {
+                }
+            }
+            else if (!Input.GetMouseButton(0))
+            {
+                onGesture = false;
+                dragging = false;
+            }
+            #else
 			if (Input.touchCount == 1)
 			{
 				dragging = true;
@@ -63,25 +63,25 @@ namespace StyloGestures
                 onGesture = false;
 				dragging = false;
 			}
-			#endif
-		}
+            #endif
+        }
 
-		public virtual void LateUpdate()
-		{
-			if (dragging)
-			{
-				lastPosition = actualPosition;
-			}
-		}
+        public virtual void LateUpdate()
+        {
+            if (dragging)
+            {
+                lastPosition = actualPosition;
+            }
+        }
 
-		#endregion
+        #endregion
 
-		#region Public Methods
+        #region Public Methods
 
-		public virtual void OnDragDetected(Vector2 actualPosition, Vector2 actualDirection)
-		{
-		}
+        public virtual void OnDragDetected(Vector2 actualPosition, Vector2 actualDirection)
+        {
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

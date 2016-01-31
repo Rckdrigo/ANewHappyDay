@@ -41,19 +41,19 @@ public class ActionScript : MonoBehaviour
 
     IEnumerator StartGame()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.2f);
         SceneManager.LoadScene(2);
     }
 
     IEnumerator ExitGame()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.2f);
         Application.Quit();
     }
 
     IEnumerator ToggleSound()
     {
         Debug.Log("TO DO");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.2f);
     }
 }

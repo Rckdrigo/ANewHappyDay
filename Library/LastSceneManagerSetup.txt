@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Minigames/Water/Water.unity
+- path: Assets/Minigames/TeethBrusher/TeethBrusher.unity
   isLoaded: 1
   isActive: 1
