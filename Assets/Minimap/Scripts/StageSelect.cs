@@ -2,12 +2,13 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class StageSelect : MonoBehaviour {
+public class StageSelect : MonoBehaviour
+{
 
     private bool clickable = true;
     private int level = 0;
 
-	void ToggleClick()
+    void ToggleClick()
     {
         Debug.Log("Toggle Off:" + gameObject.name);
         clickable = false;
@@ -53,14 +54,14 @@ public class StageSelect : MonoBehaviour {
 
     IEnumerator LoadLevel()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         ToggleClick();
         SceneManager.LoadScene(level);
     }
 
     IEnumerator ResetGame()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         ToggleClick();
         SceneManager.LoadScene(0);
     }
