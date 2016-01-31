@@ -51,8 +51,8 @@
      <Compile Include="Assets\Minigames\Despertador\Script\TapMe.cs" />
      <Compile Include="Assets\Minigames\Memorama\Memorama.cs" />
      <Compile Include="Assets\Minigames\Memorama\MemoramaCard.cs" />
-     <Compile Include="Assets\Minigames\PrepararCafe\Scripts\Randomize.cs" />
-     <Compile Include="Assets\Minigames\PrepararCafe\Scripts\Touched.cs" />
+     <Compile Include="Assets\Minigames\PrepararCafe\Randomize.cs" />
+     <Compile Include="Assets\Minigames\PrepararCafe\Touched.cs" />
      <Compile Include="Assets\Minigames\Slippers\FootBehaviour.cs" />
      <Compile Include="Assets\Minigames\Slippers\Slippers.cs" />
      <Compile Include="Assets\Minigames\TeethBrusher\DirtSpotBehaviour.cs" />

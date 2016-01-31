@@ -16,7 +16,11 @@ public class TeethBrushBehaviour : DragGesture
         else
         {
             if (!GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().time = 0.2f;
                 GetComponent<AudioSource>().Play();
+            }
+                
         }
     }
 }

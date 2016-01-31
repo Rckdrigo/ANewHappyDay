@@ -8,7 +8,10 @@ public class TapMe : MonoBehaviour
     public GameObject[] tapObjects;
     public GameObject[] tapOrder;
 
+    public AudioClip winAudio, loseAudio;
+
     private string tapToTag;
+    private AudioSource audioSource;
 
     void Awake()
     {
@@ -16,15 +19,12 @@ public class TapMe : MonoBehaviour
         Shuffle();
         Initialize();
       
-       
-        GetComponent<AudioSource>().Play();
     }
 
     void Start()
     {
-        //Debug.Log("Tag to Tap: " + tapToTag);
-
         Timer.TimeOut += OnTimeOut;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnDestroy()
@@ -64,20 +64,22 @@ public class TapMe : MonoBehaviour
     {
         if (tappedTag.ToString().Equals(tapToTag))
         {
-            //Debug.Log("WINNER");
-            //Time.timeScale = 0;
+            audioSource.clip = winAudio;
+            audioSource.Play();
             Timer.Instance.StopTimer();
             transform.parent.BroadcastMessage("WakeUp");            
         }
         else
         {
+            audioSource.clip = loseAudio;
+            audioSource.Play();
+            Timer.Instance.StopTimer();
             CloseLids();
         }
     }
 
     void CloseLids()
     {
-        //Debug.Log("TO DO");
         transform.parent.BroadcastMessage("Die");
     }
 

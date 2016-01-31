@@ -13,6 +13,9 @@ public class WaterTap : MonoBehaviour
     public bool grow;
     public bool finish;
 
+    public AudioClip winAudio, loseAudio;
+    AudioSource audioSource;
+
     void Awake()
     {
         spawnPosition = transform.position;
@@ -21,6 +24,7 @@ public class WaterTap : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         Timer.TimeOut += OnTimeOut;
     }
 
@@ -31,22 +35,28 @@ public class WaterTap : MonoBehaviour
 
     void OnTimeOut()
     {
-        Die();
+        if (CollisionDetector.streaming)
+            Win();
+        else
+            Die();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        print(CollisionDetector.streaming);
         ScaleStream();
     }
 
     void OnMouseDown()
     {
-        grow = true;
-
-        if (stream == null)
+        if (!finish)
         {
-            stream = (GameObject)Instantiate(streamGO, spawnPosition, Quaternion.Euler(Vector3.one));
+            grow = true;
+
+            if (stream == null)
+            {
+                stream = (GameObject)Instantiate(streamGO, spawnPosition, Quaternion.identity);
+            }
         }
     }
 
@@ -68,6 +78,7 @@ public class WaterTap : MonoBehaviour
             {
                 scaleY = 1f;
             }
+            stream.transform.localScale = new Vector2(0.1f, stream.transform.localScale.y);
         }       
 
         if (finish)
@@ -80,20 +91,30 @@ public class WaterTap : MonoBehaviour
                 stream.transform.localScale = Vector3.Lerp(stream.transform.localScale, tmp, Time.fixedDeltaTime);
                 scale += (0.1f * (grow ? 1 : -1));
             }
+            stream.transform.localScale = new Vector2(0.1f, stream.transform.localScale.y);
         }
+
     }
 
     void Win()
     {
-        Time.timeScale = 0.5f;
+        audioSource.clip = winAudio;
+        audioSource.Play();
         finish = true;
-        SceneManager.LoadScene("Map");
+        StartCoroutine(WaitUntilAudioIsOver());
     }
 
     void Die()
     {
-        Debug.Log("TODO");
-        Time.timeScale = 0;
+        audioSource.clip = loseAudio;
+        audioSource.Play();
+        StartCoroutine(WaitUntilAudioIsOver());
+    }
+
+    IEnumerator WaitUntilAudioIsOver()
+    {
+        yield return new WaitForSeconds(audioSource.clip.length * 1.2f);
+        finish = false;
         SceneManager.LoadScene("Map");
     }
 }
