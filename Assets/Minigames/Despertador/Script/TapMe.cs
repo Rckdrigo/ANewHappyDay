@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class TapMe : MonoBehaviour
 {
     private Vector3 spawnPosition = new Vector3(-4, 0, 0);
     public GameObject[] tapObjects;
     public GameObject[] tapOrder;
+
     private string tapToTag;
 
     void Awake()
@@ -13,19 +15,27 @@ public class TapMe : MonoBehaviour
         spawnPosition.z = transform.position.z;
         Shuffle();
         Initialize();
+      
+       
+        GetComponent<AudioSource>().Play();
     }
 
-	// Use this for initialization
-	void Start ()
+    void Start()
     {
-        Debug.Log("Tag to Tap: " + tapToTag);
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        //Debug.Log("Tag to Tap: " + tapToTag);
+
+        Timer.TimeOut += OnTimeOut;
+    }
+
+    void OnDestroy()
     {
-	    
-	}
+        Timer.TimeOut -= OnTimeOut;
+    }
+
+    void OnTimeOut()
+    {
+        CloseLids();
+    }
 
     void Shuffle()
     {
@@ -44,15 +54,19 @@ public class TapMe : MonoBehaviour
             tapOrder[i].tag = tapObjects[i].name;
             tapOrder[i].AddComponent<TapDetect>();
             spawnPosition.x += 4;
+
+            if (tapOrder[i].tag.Equals(tapToTag))
+                tapOrder[i].GetComponent<AudioSource>().Play();
         }
     }
 
     void CheckTappedTag(string tappedTag)
     {
-        if(tappedTag.ToString().Equals(tapToTag))
+        if (tappedTag.ToString().Equals(tapToTag))
         {
-            Debug.Log("WINNER");
+            //Debug.Log("WINNER");
             //Time.timeScale = 0;
+            Timer.Instance.StopTimer();
             transform.parent.BroadcastMessage("WakeUp");            
         }
         else
@@ -63,7 +77,12 @@ public class TapMe : MonoBehaviour
 
     void CloseLids()
     {
-        Debug.Log("TO DO");
+        //Debug.Log("TO DO");
         transform.parent.BroadcastMessage("Die");
+    }
+
+    public static void FinishedAnimation()
+    {
+        SceneManager.LoadScene(2);   
     }
 }

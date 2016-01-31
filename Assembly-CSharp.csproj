@@ -85,6 +85,7 @@
      <Compile Include="Assets\StyloGestures\Scripts\Tap\DoubleTapGestureEvent.cs" />
      <Compile Include="Assets\StyloGestures\Scripts\Tap\TapGesture.cs" />
      <Compile Include="Assets\StyloGestures\Scripts\Tap\TapGestureEvent.cs" />
+     <Compile Include="Assets\Timer.cs" />
      <None Include="Assets\Minigames\Despertador\Shaders\DepthOrder.shader" />
      <None Include="Assets\Minigames\Despertador\Shaders\SecondShader.shader" />
      <None Include="Assets\Minigames\Despertador\Shaders\PhongLighting.shader" />
