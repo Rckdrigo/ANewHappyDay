@@ -5,6 +5,8 @@ using System;
 public class CheckDate : MonoBehaviour
 {
 
+    public static CheckDate checkDate;
+
     void Start()
     {
         if (!PlayerPrefs.HasKey("ContinuousDay"))
@@ -14,29 +16,31 @@ public class CheckDate : MonoBehaviour
     public void SetTodayData()
     {
         int i = PlayerPrefs.GetInt("ContinuousDay");
-        if (CheckIfContinuousDay())
+        if (PlayerPrefs.GetFloat("LastDayPlayed") != (float)DateTime.Today.ToOADate())
         {
-            i++;
-            if (i == 7)
+            if (CheckIfContinuousDay())
             {
-                //TODO
-                print("INVOCAR EL DEMONIO");
-                PlayerPrefs.SetInt("ContinuousDay", 0);
+                i++;
+                if (i == 7)
+                {
+                    //TODO
+                    print("INVOCAR EL DEMONIO");
+                    PlayerPrefs.SetInt("ContinuousDay", 0);
+                }
+                else
+                    PlayerPrefs.SetInt("ContinuousDay", i);
             }
             else
-                PlayerPrefs.SetInt("ContinuousDay", i);
+            {
+                PlayerPrefs.SetInt("ContinuousDay", 0);
+            }
+
+
+            float today = (float)DateTime.Today.ToOADate();
+
+            PlayerPrefs.SetFloat("LastDayPlayed", today);
+            PlayerPrefs.Save();
         }
-        else
-        {
-            PlayerPrefs.SetInt("ContinuousDay", 0);
-        }
-
-
-        float today = (float)DateTime.Today.ToOADate();
-
-        PlayerPrefs.SetFloat("LastDayPlayed", today);
-        PlayerPrefs.Save();
-
 
     }
 
@@ -44,8 +48,7 @@ public class CheckDate : MonoBehaviour
     public bool CheckIfContinuousDay()
     {
         double lastDayPlayed = (double)PlayerPrefs.GetFloat("LastDayPlayed");
-        //print(DateTime.FromOADate(lastDayPlayed).AddDays(1).DayOfWeek + " VS " + DateTime.Today.DayOfWeek);
-
+       
         if (DateTime.FromOADate(lastDayPlayed).AddDays(1).Equals(DateTime.Today))
             return true;
         return false;

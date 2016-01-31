@@ -27,7 +27,9 @@ public class DirtSpotBehaviour : MonoBehaviour
         if (sprite.color.a <= 0)
         {
             TeethBrusher.Instance.RemoveStain(gameObject);
-            Destroy(gameObject);
+            GetComponent<AudioSource>().time = 0.3f;
+            GetComponent<AudioSource>().Play();
+            GetComponent<Collider2D>().enabled = false;
         }
 
     }
