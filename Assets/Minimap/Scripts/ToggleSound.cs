@@ -11,7 +11,6 @@ public class ToggleSound : MonoBehaviour
     {
         audioListener = gameObject.GetComponent<AudioListener>();
         audioSource = gameObject.GetComponent<AudioSource>();        
-        Debug.Log("TO DO");
         //obtener mute
         audioSource.playOnAwake = !mute;        
     }

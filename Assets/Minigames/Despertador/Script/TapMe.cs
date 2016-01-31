@@ -49,7 +49,7 @@ public class TapMe : MonoBehaviour
 
         for (int i = 0; i < tapObjects.Length; i++)
         {
-            tapOrder[i] = (GameObject)Instantiate(tapObjects[i], spawnPosition, Quaternion.Euler(Vector3.one));
+            tapOrder[i] = (GameObject)Instantiate(tapObjects[i], spawnPosition + (Vector3)Vector2.up * Random.Range(-1.5f, 1.5f), Quaternion.Euler(Vector3.one));
             tapOrder[i].transform.parent = gameObject.transform;
             tapOrder[i].tag = tapObjects[i].name;
             tapOrder[i].AddComponent<TapDetect>();

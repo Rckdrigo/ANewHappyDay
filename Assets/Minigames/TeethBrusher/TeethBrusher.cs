@@ -11,19 +11,16 @@ public class TeethBrusher : MonoBehaviour
     public AudioClip winAudio, loseAudio;
     AudioSource audioSource;
 
+    Vector2 dir;
+
     void Start()
     {
         Instance = this;
-<<<<<<< HEAD
-        Timer.TimeOut += () =>
-        {
-            //TODO
-            print("LOST");
-            SceneManager.LoadScene(2);
-        };
-=======
         Timer.TimeOut += OnTimeOut;
         audioSource = GetComponent<AudioSource>();
+
+        dir = Random.insideUnitCircle;
+        StartCoroutine(Move((Vector2)transform.position + dir * 5));
     }
 
     void OnTimeOut()
@@ -36,7 +33,6 @@ public class TeethBrusher : MonoBehaviour
     void OnDestroy()
     {
         Timer.TimeOut -= OnTimeOut;
->>>>>>> Rod
     }
 
     public void RemoveStain(GameObject stain)
@@ -44,22 +40,28 @@ public class TeethBrusher : MonoBehaviour
         teeth.Remove(stain);
         if (teeth.Count == 0)
         {
-<<<<<<< HEAD
-            //TODO
-            SceneManager.LoadScene(2);
-=======
             Timer.Instance.StopTimer();
             audioSource.clip = winAudio;
             audioSource.Play();
             StartCoroutine(WaitUntilAudioIsOver());
->>>>>>> Rod
         }
     }
 
     IEnumerator WaitUntilAudioIsOver()
     {
         yield return new WaitForSeconds(audioSource.clip.length * 1.3f);
-        SceneManager.LoadScene("Map");
+        SceneManager.LoadScene("Minimap");
       
+    }
+
+    IEnumerator Move(Vector2 nextPos)
+    {
+        for (int i = 0; i < 15; i++)
+        {
+            transform.position = Vector2.Lerp(transform.position, nextPos, Time.deltaTime * 2);
+            yield return null;
+        }
+        dir = Random.insideUnitCircle;
+        StartCoroutine(Move((Vector2)transform.position + dir * 5));
     }
 }

@@ -102,7 +102,7 @@ public class Memorama : MonoBehaviour
     {
         yield return new WaitForSeconds(audioSource.clip.length * 1.3f);
         currentCardsFaceUp.Clear();
-        SceneManager.LoadScene("Map");
+        SceneManager.LoadScene("Minimap");
       
     }
 }

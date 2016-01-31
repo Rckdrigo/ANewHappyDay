@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 using System.Collections;
 
 public class CollisionDetector : MonoBehaviour
@@ -9,6 +10,8 @@ public class CollisionDetector : MonoBehaviour
 
     public static CollisionDetector Instance;
 
+    public AudioMixerSnapshot normal, lowPassFilter;
+
     void Start()
     {
         Instance = this;
@@ -17,9 +20,11 @@ public class CollisionDetector : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        print("GOOD");
         if (collider.transform.tag == "Water")
         {
             streaming = true;
+            lowPassFilter.TransitionTo(0.01f);
         }
     }
 
@@ -28,6 +33,7 @@ public class CollisionDetector : MonoBehaviour
         if (collider.transform.tag == "Water")
         {
             streaming = false;
+            normal.TransitionTo(0.01f);
         }
     }
 

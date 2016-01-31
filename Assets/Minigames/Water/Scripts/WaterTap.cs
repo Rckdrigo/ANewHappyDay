@@ -43,7 +43,6 @@ public class WaterTap : MonoBehaviour
 
     void Update()
     {
-        print(CollisionDetector.streaming);
         ScaleStream();
     }
 
@@ -55,7 +54,7 @@ public class WaterTap : MonoBehaviour
 
             if (stream == null)
             {
-                stream = (GameObject)Instantiate(streamGO, spawnPosition, Quaternion.identity);
+                stream = (GameObject)Instantiate(streamGO, spawnPosition - (Vector3)Vector2.up * 5, Quaternion.identity);
             }
         }
     }
@@ -115,6 +114,6 @@ public class WaterTap : MonoBehaviour
     {
         yield return new WaitForSeconds(audioSource.clip.length * 1.2f);
         finish = false;
-        SceneManager.LoadScene("Map");
+        SceneManager.LoadScene("Minimap");
     }
 }

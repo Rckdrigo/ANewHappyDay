@@ -23,7 +23,7 @@ public class DirtSpotBehaviour : MonoBehaviour
 
     void OnMouseOver()
     {
-        sprite.color -= new Color(0, 0, 0, 0.2f);
+        sprite.color -= new Color(0, 0, 0, 0.3f);
         if (sprite.color.a <= 0)
         {
             TeethBrusher.Instance.RemoveStain(gameObject);
