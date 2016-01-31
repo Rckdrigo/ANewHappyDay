@@ -29,23 +29,23 @@ public class StageSelect : MonoBehaviour
 
             if (gameObject.name.Equals("Bedroom"))
             {
-                level = 3;
+                level = 4;
             }
             if (gameObject.name.Equals("Bathroom"))
             {
-                level = 4;
+                level = 5;
             }
             if (gameObject.name.Equals("Kitchen"))
             {
-                level = 5;
+                level = 6;
             }
             if (gameObject.name.Equals("LivingRoom"))
             {
-                level = 6;
+                level = 7;
             }
             if (gameObject.name.Equals("Closet"))
             {
-                level = 7;
+                level = 8;
             }
         }
 

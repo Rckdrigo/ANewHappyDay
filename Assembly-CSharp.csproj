@@ -45,6 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DemonBehaviour.cs" />
+     <Compile Include="Assets\Invocation.cs" />
+     <Compile Include="Assets\MiniGameManager.cs" />
      <Compile Include="Assets\Minigames\Despertador\Script\BlinkScript.cs" />
      <Compile Include="Assets\Minigames\Despertador\Script\Randomizer.cs" />
      <Compile Include="Assets\Minigames\Despertador\Script\TapDetect.cs" />

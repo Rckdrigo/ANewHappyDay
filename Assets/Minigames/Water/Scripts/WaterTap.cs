@@ -77,7 +77,7 @@ public class WaterTap : MonoBehaviour
             {
                 scaleY = 1f;
             }
-            stream.transform.localScale = new Vector2(0.1f, stream.transform.localScale.y);
+            stream.transform.localScale = new Vector2(1f, stream.transform.localScale.y);
         }       
 
         if (finish)
@@ -90,13 +90,14 @@ public class WaterTap : MonoBehaviour
                 stream.transform.localScale = Vector3.Lerp(stream.transform.localScale, tmp, Time.fixedDeltaTime);
                 scale += (0.1f * (grow ? 1 : -1));
             }
-            stream.transform.localScale = new Vector2(0.1f, stream.transform.localScale.y);
+            stream.transform.localScale = new Vector2(1f, stream.transform.localScale.y);
         }
 
     }
 
     void Win()
     {
+        MiniGameManager.ActivatePee();
         audioSource.clip = winAudio;
         audioSource.Play();
         finish = true;

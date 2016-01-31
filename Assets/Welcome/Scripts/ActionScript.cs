@@ -42,7 +42,7 @@ public class ActionScript : MonoBehaviour
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     IEnumerator ExitGame()

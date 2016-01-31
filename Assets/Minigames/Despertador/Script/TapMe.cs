@@ -9,9 +9,9 @@ public class TapMe : MonoBehaviour
     public GameObject[] tapOrder;
 
     public AudioClip winAudio, loseAudio;
+    private AudioSource audioSource;
 
     private string tapToTag;
-    private AudioSource audioSource;
 
     void Awake()
     {
@@ -64,6 +64,7 @@ public class TapMe : MonoBehaviour
     {
         if (tappedTag.ToString().Equals(tapToTag))
         {
+            MiniGameManager.ActivateWakeup();
             audioSource.clip = winAudio;
             audioSource.Play();
             Timer.Instance.StopTimer();
@@ -85,6 +86,6 @@ public class TapMe : MonoBehaviour
 
     public static void FinishedAnimation()
     {
-        SceneManager.LoadScene(2);   
+        SceneManager.LoadScene("Minimap");   
     }
 }

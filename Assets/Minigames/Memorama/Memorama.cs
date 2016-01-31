@@ -77,6 +77,7 @@ public class Memorama : MonoBehaviour
             if (currentCardsFaceUp[0].COLOR.id == currentCardsFaceUp[1].COLOR.id)
             {
                 audioSource.clip = winAudio;
+                MiniGameManager.ActivateMemo();
                 audioSource.Play();
                 Timer.Instance.StopTimer();
                 currentCardsFaceUpCount = 0;

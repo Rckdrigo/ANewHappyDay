@@ -4,11 +4,13 @@ using System;
 
 public class CheckDate : MonoBehaviour
 {
+    public static CheckDate Instance;
 
-    public static CheckDate checkDate;
+    public GameObject penthagram, demon;
 
     void Start()
     {
+        Instance = this;
         if (!PlayerPrefs.HasKey("ContinuousDay"))
             PlayerPrefs.SetInt("ContinuousDay", 0);
     }
@@ -23,8 +25,7 @@ public class CheckDate : MonoBehaviour
                 i++;
                 if (i == 7)
                 {
-                    //TODO
-                    print("INVOCAR EL DEMONIO");
+                    InitRitual();
                     PlayerPrefs.SetInt("ContinuousDay", 0);
                 }
                 else
@@ -44,8 +45,19 @@ public class CheckDate : MonoBehaviour
 
     }
 
+    void InitRitual()
+    {
+        StartCoroutine(ActivateDemon());
+    }
 
-    public bool CheckIfContinuousDay()
+    IEnumerator ActivateDemon()
+    {
+        penthagram.SetActive(true);
+        yield return new WaitForSeconds(5);
+        demon.SetActive(true);
+    }
+
+    bool CheckIfContinuousDay()
     {
         double lastDayPlayed = (double)PlayerPrefs.GetFloat("LastDayPlayed");
        
@@ -54,5 +66,12 @@ public class CheckDate : MonoBehaviour
         return false;
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            InitRitual();
+        }
+    }
 
 }

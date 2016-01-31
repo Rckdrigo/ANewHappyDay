@@ -41,6 +41,7 @@ public class TeethBrusher : MonoBehaviour
         if (teeth.Count == 0)
         {
             Timer.Instance.StopTimer();
+            MiniGameManager.ActivateTeeth();
             audioSource.clip = winAudio;
             audioSource.Play();
             StartCoroutine(WaitUntilAudioIsOver());
