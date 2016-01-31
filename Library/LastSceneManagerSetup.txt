@@ -1,16 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Minigames/Memorama/SceneMemorama.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Map.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Minigames/Water/Water.unity
-=======
-- path: Assets/TeethBrusher.unity
->>>>>>> 117798dac153a5ea427641ef9e8334093a51f532
->>>>>>> 0634a3f48d4a5cfe8814cec47e3fdef7834a44be
->>>>>>> master
+- path: Assets/Minigames/Despertador/Scenes/AlarmClock.unity
   isLoaded: 1
   isActive: 1
