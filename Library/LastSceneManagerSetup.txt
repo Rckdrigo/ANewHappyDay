@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Minigames/TeethBrusher/TeethBrusher.unity
+- path: Assets/Minigames/Despertador/Scenes/AlarmClock.unity
   isLoaded: 1
   isActive: 1

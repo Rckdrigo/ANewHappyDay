@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class TapMe : MonoBehaviour
 {
-    private Vector3 spawnPosition = new Vector3(-4, 0, 0);
+    private Vector3 spawnPosition = new Vector3(-8, 0, 0);
     public GameObject[] tapObjects;
     public GameObject[] tapOrder;
 
@@ -53,7 +53,7 @@ public class TapMe : MonoBehaviour
             tapOrder[i].transform.parent = gameObject.transform;
             tapOrder[i].tag = tapObjects[i].name;
             tapOrder[i].AddComponent<TapDetect>();
-            spawnPosition.x += 4;
+            spawnPosition.x += 8;
 
             if (tapOrder[i].tag.Equals(tapToTag))
                 tapOrder[i].GetComponent<AudioSource>().Play();
